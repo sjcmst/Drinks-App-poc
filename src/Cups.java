@@ -23,6 +23,7 @@ public class Cups implements Cloneable  {
 	public Cups(double price, String name)
 	{}
 	
+
 	public double getVolumeCm3()
 	{
 		return volumeCm3;
@@ -48,6 +49,13 @@ public class Cups implements Cloneable  {
 	{
 		return volumeCm3 / price;
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	public void userInputDetails()
 	{
