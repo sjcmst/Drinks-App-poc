@@ -1,6 +1,6 @@
 
 public class CupsFactory {
-	public Cups getCup(String cupType) {
+	public Cups makeCup(String cupType) {
 		if(cupType == null){
 	         return null;
 	      }		

@@ -24,10 +24,15 @@ public class NormalCups implements Cups {
 	}
 
 
-	public double getVolumePerPrice() {
-		return volumeCm3 / price;
+	public double getPricePerVolume() {
+		return price / volumeCm3;
 	}
 	
+	public static String userInputClass(String name) {
+		System.out.println("Please enter the category of the " + name +" (Enter coffee if it's a starbucks)");
+		Scanner keyboard = new Scanner(System.in);
+		return keyboard.nextLine();
+	}
 	
 	@Override
 	public void userInputDetails() {
@@ -87,6 +92,17 @@ public class NormalCups implements Cups {
 		double input= keyboard.nextDouble();
 		
 		setVolumeCm3(input);
+	}
+	
+	public static void showComparasion(NormalCups firstCup, String cup1name, NormalCups secondCup, String cup2name) {
+		float volumePerPriceDiff = (float) ((firstCup.getPricePerVolume() - secondCup.getPricePerVolume())/firstCup.getPricePerVolume());
+		System.out.println(cup1name + " costs " + firstCup.getPricePerVolume() + " per mL, while " + cup2name + " costs " + secondCup.getPricePerVolume());
+	}
+
+
+	@Override
+	public String getName() {
+		return this.name;
 	}
 
 }
